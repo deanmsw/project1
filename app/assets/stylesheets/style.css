@@ -1,0 +1,32 @@
+body {
+  background-color: aliceblue;
+}
+table {
+  width: 100%;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+.container {
+  margin: 0 auto;
+  max-width: 80%;
+}
+.index {
+  display: inline-grid;
+  
+}
+nav {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+}
+nav a {
+  text-decoration: none;
+  padding: 10px;
+}
+h1 {
+  text-align: center;
+}

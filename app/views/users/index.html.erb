@@ -1,0 +1,7 @@
+<h1>All users</h1>
+
+<h2><%= User.count %> Users</h2>
+
+<% @users.each do |user| %>
+  <p><%= user.email %></p>
+<% end %>

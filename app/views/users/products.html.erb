@@ -1,0 +1,36 @@
+<h1>My Products</h1>
+
+<% @current_user.products.each do |product| %>
+
+<table class="edit_table">
+  <tr>
+    <th>Product Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Location</th>
+    <th>Condition</th>
+    <th>Shipping</th>
+    <th>Image</th>
+
+
+  </tr>
+  <tr>
+    <td><%= product.name %> </td>
+    <td><%= product.description %> </td>
+    <td><%= product.price %> </td>
+    <td><%= product.location %> </td>
+    <td><%= product.condition %> </td>
+    <td><%= product.shipping %></td>
+    <td><%= product.image %></td>
+  </tr>
+  <tr>
+    <%= link_to 'Edit Listing', edit_product_path(product)  %>
+  </tr>
+  <tr>
+    <%= button_to 'Delete Product', product, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+
+  </tr>
+
+</table>
+
+<% end %>

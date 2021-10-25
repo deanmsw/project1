@@ -1,0 +1,33 @@
+<h1>Product Info</h1>
+
+
+<h2><%= @product.name %></h2>
+
+
+
+<ul>
+  <li>Name: <%= @product.name %></li>
+
+  <li>Price: <%= @product.price %></li>
+
+  <li>Location: <%= @product.location %></li>
+
+  <li>Shipping: <%= @product.shipping %></li>
+
+  <li>Condition: <%= @product.condition %></li>
+
+  <li>Description: <%= @product.description %></li>
+<% if @product.category.present? %>
+  <li> Category: <%= link_to @product.category.name, @product.category  %></li>
+<% end %>
+<% if @product.user.present? %>
+  <li> Seller: <%= link_to @product.user.username, @product.user %></li>
+
+<% end %>
+
+
+</ul>
+
+
+
+<%= image_tag @product.image, :class => 'feature' %>

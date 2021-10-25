@@ -1,0 +1,37 @@
+<h1>Upload a new product</h1>
+
+
+<%= form_for @product do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :condition %>
+  <%= f.text_field :condition %>
+
+  <%= f.label :shipping %>
+  <%= f.text_field :shipping %>
+
+  <%= f.label :category_id %>
+  <%= f.select :category_id, Category.pluck(:name, :id ) %>
+
+  <% f.label :user_id %>
+  <%= f.hidden_field :user_id, value: @current_user.id  %>
+
+
+
+  <%= f.submit "Upload!" %>
+
+<% end %>
