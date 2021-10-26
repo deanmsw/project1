@@ -1,7 +1,12 @@
 class ProductsController < ApplicationController
 
+
 def index
-  @products = Product.all
+  if params[:search]
+    @products = Product.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+  else
+    @products = Product.all
+  end
 end
 
 def new
@@ -22,8 +27,6 @@ end
 def show
   @product = Product.find params[:id]
 end
-
-
 
 def create
   @product = Product.new product_params

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :products
   resources :categories
+  resources :locations
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

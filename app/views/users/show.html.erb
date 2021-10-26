@@ -1,5 +1,32 @@
-<h1>All Products From User <%= @user.username %></h1>
+<h1>User Info- <%= @user.username %></h1>
+
+
+<%= image_tag @user.image, :class => 'thumb' if @user.image.present? %>
+
+<h2>Contact User</h2>
+
+<%= mail_to @user.email, "Email Me" %>
+
+
+
+
+
+<h2>All Products From User <%= @user.username %></h2>
+
+
 
 <% @user.products.each do |product| %>
-<%= link_to product.name, product %>
+
+<%= link_to product do %>
+<div class='index' >
+  <%= image_tag product.image, :class => 'thumb' if product.image.present? %>
+
+  <ul class='index2'>
+    <li> <%= link_to product.name, product %> </li>
+    <li> Price:  <%= number_to_currency(product.price) %> </li>
+    <li> Location: <%= product.location%> </li>
+  </ul>
+</div>
+
+<% end %>
 <% end %>

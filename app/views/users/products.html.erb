@@ -1,8 +1,10 @@
 <h1>My Products</h1>
 
+
 <% @current_user.products.each do |product| %>
 
-<table class="edit_table">
+<div class="table2">
+<table >
   <tr>
     <th>Product Name</th>
     <th>Description</th>
@@ -17,20 +19,25 @@
   <tr>
     <td><%= product.name %> </td>
     <td><%= product.description %> </td>
-    <td><%= product.price %> </td>
+    <td>$<%= product.price %> </td>
     <td><%= product.location %> </td>
     <td><%= product.condition %> </td>
     <td><%= product.shipping %></td>
     <td><%= product.image %></td>
   </tr>
-  <tr>
-    <%= link_to 'Edit Listing', edit_product_path(product)  %>
+  <tr >
+    <%= link_to 'View Listing', product, :class => 'spacing' %>
   </tr>
-  <tr>
-    <%= button_to 'Delete Product', product, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+  <tr class="spacing">
+    <%= link_to 'Edit Listing', edit_product_path(product), :class => 'spacing'  %>
+  </tr>
+  <tr class="spacing">
+    <%= button_to 'Delete Product', product, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'spacing' %>
 
   </tr>
 
 </table>
+
+</div>
 
 <% end %>

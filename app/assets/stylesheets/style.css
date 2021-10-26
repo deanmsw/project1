@@ -1,5 +1,9 @@
 body {
-  background-color: aliceblue;
+  background-color: #c7f2b6;
+}
+
+h1 {
+  font-size: 50px;
 }
 table {
   width: 100%;
@@ -7,21 +11,54 @@ table {
   background-color: white;
 }
 
+.index2, li {
+   list-style-type: none;
+}
+
+#mapid {
+  height: 280px;
+}
+
 table, th, td {
   border: 1px solid black;
 }
-.container {
-  margin: 0 auto;
-  max-width: 80%;
-}
+
 .index {
+
   display: inline-grid;
-  
+  width: 32%;
+  background-color: white;
+  height: 300px;
+  margin-bottom: 20px;
+  margin-right: 8px;
+  /* border: 1px solid grey; */
+  box-shadow: 5px 5px 5px #777777;
+}
+.index:hover {
+  background-color: aliceblue;
+
+}
+.cat, a {
+  text-align: center;
+  text-decoration: none;
+
+}
+.thumb {
+  width: 150px;
+  height: 150px;
+}
+.index li {
+  width: 200px;
 }
 nav {
   text-align: center;
   font-size: 25px;
   padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #c7f2b6;
+  width: 80%;
+  margin: 0 auto;
+
 }
 nav a {
   text-decoration: none;
@@ -29,4 +66,12 @@ nav a {
 }
 h1 {
   text-align: center;
+}
+.spacing {
+  padding-right: 20px;
+  margin-bottom: 10px;
+}
+
+.table2 {
+  margin-bottom: 50px;
 }

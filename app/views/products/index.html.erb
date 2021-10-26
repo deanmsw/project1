@@ -1,11 +1,25 @@
 <h1>All Products</h1>
 
+<%= form_tag products_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search" %>
+  </p>
+  <% end %>
+
 <% @products.each do |product| %>
 
-<%= image_tag product.image, :class => 'thumb' if product.image.present? %>
-  <ul class='index'>
+<%= link_to product do %>
+
+<div class='index' >
+  <%= image_tag product.image, :class => 'thumb' if product.image.present? %>
+
+  <ul class='index2'>
     <li> <%= link_to product.name, product %> </li>
-    <li> Price = $ <%= product.price %> </li>
+    <li> Price: <%= number_to_currency(product.price) %> </li>
     <li> Location: <%= product.location%> </li>
   </ul>
+</div>
+
+<% end %>
 <% end %>
