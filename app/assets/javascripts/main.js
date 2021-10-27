@@ -19,8 +19,3 @@ $(document).ready(function(){
 
 
 })
-
-$('.link').click( function(event) {
-  var clicked_div = $(this);
-
-});

@@ -2,11 +2,14 @@ class ProductsController < ApplicationController
 
 
 def index
-  if params[:search]
-    @products = Product.where('name LIKE ?', "%#{params[:search]}%")
-  else
-    @products = Product.all
-  end
+
+      if params[:search].present?
+        @products = Product.where('name LIKE ?', "%#{params[:search]}%")
+      elsif params[:location].present?
+        @products = Product.near(params[:location])
+      else
+        @products = Product.all
+      end
 end
 
 def new

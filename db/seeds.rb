@@ -30,3 +30,7 @@ c9 = Category.create :name => 'Sealants/Adhesives'
 c11 = Category.create :name => 'Tools'
 c10 = Category.create :name => 'Free'
 puts "#{ Category.count } categories"
+
+
+Cart.destroy_all
+puts "\nTotal cart count: #{Cart.all.count}"
