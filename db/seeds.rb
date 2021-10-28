@@ -9,14 +9,14 @@ puts "#{ User.count } users"
 
 
 Product.destroy_all
-p1 = Product.create :name => '20mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '3.00', :location => 'Sydney', :condition => 'New', :shipping => '', :category_id => "1", :user_id => ''
-p1 = Product.create :name => '32mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '15.00', :location => 'Sydney', :condition => 'New', :shipping => '', :category_id => "1", :user_id => ''
-p1 = Product.create :name => '40mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '30.00', :location => 'Melbourne', :condition => 'New', :shipping => '', :category_id => "1", :user_id => ''
-p1 = Product.create :name => '50mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '75.00', :location => 'Brisbane', :condition => 'New', :shipping => '', :category_id => "1", :user_id => ''
-p1 = Product.create :name => 'Paint Tin White', :description  => 'This product is used to paint', :images  => [], :price => '10.00', :location => 'Sydney', :condition => 'New', :shipping => '', :category_id => "6", :user_id => ''
-p1 = Product.create :name => 'Wood Off-cuts', :description  => 'Wood Off-cuts', :images  => '', :price => '00.00', :location => 'Sydney', :condition => 'Used', :shipping => '', :category_id => "11", :user_id => ''
-p1 = Product.create :name => 'Makita Grinder', :description  => 'This tool is used for cutting and grinding', :images  => [], :price => '120.00', :location => 'Melbourne', :condition => 'New', :shipping => '', :category_id => "10", :user_id => ''
-p1 = Product.create :name => 'Lightbulbs', :description  => 'This product is used for lighting', :images  => [], :price => '5.00', :location => 'Brisbane', :condition => 'New', :shipping => '', :category_id => "3", :user_id => ''
+p1 = Product.create :name => '20mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '3.00', :location => 'Sydney', :condition => 'New', :shipping => '', :category_id => "1", :user_id => '47'
+p1 = Product.create :name => '32mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '15.00', :location => 'Sydney', :condition => 'New', :shipping => '', :category_id => "1", :user_id => '47'
+p1 = Product.create :name => '40mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '30.00', :location => 'Melbourne', :condition => 'New', :shipping => '', :category_id => "1", :user_id => '47'
+p1 = Product.create :name => '50mm Copper Elbow', :description  => 'This product is used in plumbing', :images  => [], :price => '75.00', :location => 'Brisbane', :condition => 'New', :shipping => '', :category_id => "1", :user_id => '47'
+p1 = Product.create :name => 'Paint Tin White', :description  => 'This product is used to paint', :images  => [], :price => '10.00', :location => 'Sydney', :condition => 'New', :shipping => '', :category_id => "6", :user_id => '47'
+p1 = Product.create :name => 'Wood Off-cuts', :description  => 'Wood Off-cuts', :images  => '', :price => '00.00', :location => 'Sydney', :condition => 'Used', :shipping => '', :category_id => "11", :user_id => '47'
+p1 = Product.create :name => 'Makita Grinder', :description  => 'This tool is used for cutting and grinding', :images  => [], :price => '120.00', :location => 'Melbourne', :condition => 'New', :shipping => '', :category_id => "10", :user_id => '47'
+p1 = Product.create :name => 'Lightbulbs', :description  => 'This product is used for lighting', :images  => [], :price => '5.00', :location => 'Brisbane', :condition => 'New', :shipping => '', :category_id => "3", :user_id => '47'
 puts "#{ Product.count } products"
 
 Category.destroy_all

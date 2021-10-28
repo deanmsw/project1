@@ -36,6 +36,17 @@
   <%= cl_image_tag image, style: 'height:300px; width:auto;' %>
 <% end %>
 
+
+ 
+<% if @current_user.present? %>
+<% if @current_user.admin? %>
+    <%= link_to 'Edit Listing', edit_product_path(@product), :class => 'spacing'  %>
+    <%= button_to 'Delete Product', @product, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'spacing' %>
+
+<% end %>
+<% end %>
+
+
 <br>
 <br>
 <br>
