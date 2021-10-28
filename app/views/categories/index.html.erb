@@ -3,11 +3,16 @@
 
 <% @categories.each do |category| %>
 
-<%= link_to category do %>
-  <div class="index" >
+  <%= link_to category do %>
+
+    <div class="index" >
 
       <h2 class="cat"><%= category.name %> </h2>
+      
       <%= image_tag category.image, :class => 'feature' %>
-  </div>
-<% end %>
+
+    </div>
+
+  <% end %>
+
 <% end %>

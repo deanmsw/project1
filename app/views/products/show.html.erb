@@ -16,7 +16,7 @@
 
     <li>Description: <%= @product.description %></li>
 
-<iframe src='https://maps.google.com/maps?q=<%= @product.latitude %>,<%= @product.longitude %>&amp;output=embed' frameborder='0' style='border:0' width='750' height='300' allowfullscreen></iframe>
+  <iframe src='https://maps.google.com/maps?q=<%= @product.latitude %>,<%= @product.longitude %>&amp;output=embed' frameborder='0' style='border:0' width='750' height='300' allowfullscreen></iframe>
 
   <% if @product.category.present? %>
     <li> Category: <%= link_to @product.category.name, @product.category  %></li>
@@ -27,8 +27,16 @@
   <% end %>
 
   </ul>
-<%= button_to "Add #{@product.name} to cart", line_items_path(:product_id => @product.id) %>
+
+  <% if @current_user.present? %>
+    <%= button_to "Add #{@product.name} to cart", line_items_path(:product_id => @product.id) %>
+  <% end %>
 
 <% @product.images.each do |image| %>
-<%= cl_image_tag image %>
+  <%= cl_image_tag image, style: 'height:300px; width:auto;' %>
 <% end %>
+
+<br>
+<br>
+<br>
+<br>

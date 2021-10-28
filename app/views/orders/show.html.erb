@@ -1,2 +1,5 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<h1>Your Recent Order</h1>
+
+<h3>Sub total: <%= number_to_currency(@order.sub_total) %></h3>
+
+  <%= button_to 'Delete Order', @order, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'spacing' %>

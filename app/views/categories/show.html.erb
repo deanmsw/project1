@@ -1,9 +1,14 @@
 <h1>Category <%= @category.name %></h1>
 
 
-
 <% @category.products.each do |product| %>
-<div class="index">
-<%= link_to product.name, product %>
-</div>
+
+  <div class="index">
+
+    <%= cl_image_tag product.images.first, :class => 'thumb' %>
+
+    <%= link_to product.name, product %>
+
+  </div>
+
 <% end %>

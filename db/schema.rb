@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_102903) do
+ActiveRecord::Schema.define(version: 2021_10_28_034550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,42 @@ ActiveRecord::Schema.define(version: 2021_10_27_102903) do
     t.string "pay_method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pay_charges", id: :serial, force: :cascade do |t|
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.integer "amount", null: false
+    t.integer "amount_refunded"
+    t.string "card_type"
+    t.string "card_last4"
+    t.string "card_exp_month"
+    t.string "card_exp_year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.jsonb "data"
+    t.string "currency"
+    t.integer "application_fee_amount"
+    t.integer "pay_subscription_id"
+  end
+
+  create_table "pay_subscriptions", id: :serial, force: :cascade do |t|
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "name", null: false
+    t.string "processor", null: false
+    t.string "processor_id", null: false
+    t.string "processor_plan", null: false
+    t.integer "quantity", default: 1, null: false
+    t.datetime "trial_ends_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "status"
+    t.jsonb "data"
+    t.decimal "application_fee_percent", precision: 8, scale: 2
   end
 
   create_table "products", force: :cascade do |t|

@@ -1,6 +1,13 @@
 class CartsController < ApplicationController
+
+  before_action :check_for_login
+
   def show
-    @cart = @current_cart
+    if @current_user.present?
+      @cart = @current_cart
+    else
+      redirect_to login_path
+    end
   end
 
   def destroy

@@ -1,5 +1,7 @@
 class LineItemsController < ApplicationController
 
+before_action :check_for_login
+
   def create
   # Find associated product and current cart
   chosen_product = Product.find(params[:product_id])

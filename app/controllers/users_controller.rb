@@ -10,6 +10,7 @@ end
     @user = User.new
   end
 
+
 def edit
   @user = User.find params[:id]
 end
@@ -17,11 +18,19 @@ end
 
 def update
   @user = User.find params[:id]
-  @user.update user_params
-  @user.save
-  redirect_to users_path(@current_user)
+    if params[:user][:image].present?
+        req = Cloudinary::Uploader.upload(params[:user][:image])
+        @user.image = req["public_id"]
+        @user.save
+        redirect_to users_path(@current_user)
+    elsif
+      @user.update user_params
+      @user.save
+      redirect_to users_path(@current_user)
+    else
+        render :edit #show them form again
+    end
 end
-
 
 def products
   @user = User.find params[:id]

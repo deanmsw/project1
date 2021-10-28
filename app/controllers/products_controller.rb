@@ -3,13 +3,14 @@ class ProductsController < ApplicationController
 
 def index
 
-      if params[:search].present?
-        @products = Product.where('name LIKE ?', "%#{params[:search]}%")
-      elsif params[:location].present?
-        @products = Product.near(params[:location])
-      else
-        @products = Product.all
-      end
+  if params[:search].present?
+    @products = Product.where('name LIKE ?', "%#{params[:search]}%")
+  elsif params[:location].present?
+    @products = Product.near(params[:location])
+  else
+    @products = Product.all
+  end
+
 end
 
 def new
@@ -34,11 +35,11 @@ end
 def create
   @product = Product.new product_params
     if params[:product][:images].present?
-      params[:product][:images].each do |image|
-      req = Cloudinary::Uploader.upload image
-      @product.images << req["public_id"]
-      @product.save
-    end
+        params[:product][:images].each do |image|
+        req = Cloudinary::Uploader.upload image
+        @product.images << req["public_id"]
+        @product.save
+      end
     elsif
       @product.save
       redirect_to products_path

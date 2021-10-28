@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/users/:id/products' => 'users#products', :as => :users_products
 
 
+
   #carts
   get 'carts/:id' => "carts#show", as: "cart"
   delete 'carts/:id' => "carts#destroy"
@@ -27,6 +28,10 @@ Rails.application.routes.draw do
   resources :categories
   resources :locations
   resources :orders
+
+  get '/orders/:id/payments' => 'orders#payments', :as => :orders_payments
+
+  resources :charges, only: [:new, :create]
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

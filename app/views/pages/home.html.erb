@@ -1,5 +1,7 @@
-<h1>Ecommerce Marketplace Coming soon</h1>
+<h1>Ecommerce Marketplace</h1>
 
 <% if @current_user.present? %>
-  <h1> Welcome back <%= @current_user.email %> </h1>
+
+  <h2> Welcome back <small class="text-muted"> <%= @current_user.email %> </small> </h2>
+
 <% end %>

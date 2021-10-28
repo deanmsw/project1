@@ -1,24 +1,21 @@
-# README
+# Ecommerce Marketplace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Intro
+I created this multivendor marketplace with the idea of providing business's and individuals a platform to buy and sell building materials.
+This project was built using Ruby on Rails and PostgreSQL.
 
-Things you may want to cover:
+## Next Steps
+I plan to add a payment gateway and work to install a more advanced Cart and Checkout system. I will also continue to add user functionality and also a chat system so users can communicate more easily.  
 
-* Ruby version
 
-* System dependencies
+## Tech stack
 
-* Configuration
+- Ruby on Rails
+- PostgreSQL
+- Ruby
+- HTML
+- CSS
+- Heroku
+- Goolgle Maps
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To view this Rails Application, please follow the link: https://dean-s-project-1.herokuapp.com/

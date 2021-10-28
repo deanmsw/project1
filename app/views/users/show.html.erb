@@ -1,29 +1,31 @@
 <h1>User Info- <%= @user.username %></h1>
 
 
-<h2>Contact User</h2>
 
-<%= mail_to @user.email, "Email Me" %>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <h2>Contact User</h2>
+  <button type="button" class="btn btn-dark"><%= mail_to @user.email, "Email Me" %></button>
+</div>
 
-<%= cl_image_tag @user.image %>
-
+<%= cl_image_tag @user.image, :class => 'user' %>
 
 
 <h2>All Products From User <%= @user.username %></h2>
 
 
-
 <% @user.products.each do |product| %>
 
-<%= link_to product do %>
-<div class='index' >
+  <%= link_to product do %>
 
-  <ul class='index2'>
-    <li> <%= link_to product.name, product %> </li>
-    <li> Price:  <%= number_to_currency(product.price) %> </li>
-    <li> Location: <%= product.location%> </li>
-  </ul>
-</div>
+  <div class='index' >
+    <%= cl_image_tag product.images.first, :class => 'thumb' %>
+    <ul class='index2'>
+      <li> <%= link_to product.name, product %> </li>
+      <li> Price:  <%= number_to_currency(product.price) %> </li>
+      <li> Location: <%= product.location%> </li>
+    </ul>
+  </div>
 
-<% end %>
+  <% end %>
+  
 <% end %>
