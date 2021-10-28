@@ -9,8 +9,8 @@
   <%= f.label :description %>
   <%= f.text_field :description %>
 
-  <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.label :images  %>
+  <%= f.file_field :images, :multiple => true %>
 
   <%= f.label :price %>
   <%= f.text_field :price %>

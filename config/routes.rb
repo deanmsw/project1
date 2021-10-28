@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get 'orders/new'
   get 'carts/show'
   root :to => 'pages#home'
-  resources :users, :only => [:index, :new, :create, :show]
+  resources :users, :only => [:index, :new, :create, :show, :edit, :update, :destroy]
 
   get '/users/:id/products' => 'users#products', :as => :users_products
+
 
   #carts
   get 'carts/:id' => "carts#show", as: "cart"

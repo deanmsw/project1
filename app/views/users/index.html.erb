@@ -4,4 +4,7 @@
 
 <% @users.each do |user| %>
   <p><%= user.email %></p>
+
+  <%= button_to 'Delete User', user, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'spacing' %>
+
 <% end %>

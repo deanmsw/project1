@@ -33,12 +33,20 @@ end
 
 def create
   @product = Product.new product_params
-    if @product.save
+    if params[:product][:images].present?
+      params[:product][:images].each do |image|
+      req = Cloudinary::Uploader.upload image
+      @product.images << req["public_id"]
+      @product.save
+    end
+    elsif
+      @product.save
       redirect_to products_path
     else
       render :new #show them form again
     end
 end
+
 
 def destroy
   @product = Product.destroy params[:id]
@@ -47,7 +55,7 @@ end
 
 private # this makes all the following private
     def product_params #strong params (see docs)
-      params.require(:product).permit(:name, :description, :price, :image, :location, :condition, :shipping, :category_id, :user_id)
+      params.require(:product).permit(:name, :description, :price, :images, :location, :condition, :shipping, :category_id, :user_id)
     end
 
 

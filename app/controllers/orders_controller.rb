@@ -23,9 +23,14 @@ class OrdersController < ApplicationController
   redirect_to root_path
 end
 
+def destroy
+  @order = Order.destroy params[:id]
+  redirect_to orders_index_path(@current_user)
+end
+
 private
   def order_params
     params.require(:order).permit(:name, :email, :address, :pay_method)
   end
-  
+
 end

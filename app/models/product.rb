@@ -8,4 +8,5 @@ class Product < ApplicationRecord
   geocoded_by :location
   after_validation :geocode
 
+  validates :price, :presence => true 
 end

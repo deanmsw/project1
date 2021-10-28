@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
 
   private # this makes all the following private
     def category_params #strong params (see docs)
-      params.require(:category).permit(:name, :product_id)
+      params.require(:category).permit(:name, :product_id, :image)
       end
 
 end

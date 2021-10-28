@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_27_013436) do
+ActiveRecord::Schema.define(version: 2021_10_27_102903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_10_27_013436) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "product_id"
+    t.text "image"
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
@@ -53,7 +54,6 @@ ActiveRecord::Schema.define(version: 2021_10_27_013436) do
   create_table "products", force: :cascade do |t|
     t.text "name"
     t.text "description"
-    t.text "image"
     t.float "price"
     t.text "location"
     t.text "condition"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_10_27_013436) do
     t.datetime "updated_at", null: false
     t.float "longitude"
     t.float "latitude"
+    t.text "images", default: [], array: true
   end
 
   create_table "products_users", id: false, force: :cascade do |t|

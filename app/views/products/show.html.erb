@@ -6,7 +6,7 @@
   <ul>
     <li>Name: <%= @product.name %></li>
 
-    <li>Price: $<%= @product.price %></li>
+    <li>Price: <%= number_to_currency @product.price %></li>
 
     <li>Location: <%= @product.location %></li>
 
@@ -29,6 +29,6 @@
   </ul>
 <%= button_to "Add #{@product.name} to cart", line_items_path(:product_id => @product.id) %>
 
-
-
-<%= image_tag @product.image, :class => 'feature' %>
+<% @product.images.each do |image| %>
+<%= cl_image_tag image %>
+<% end %>

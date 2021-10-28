@@ -9,4 +9,5 @@
     <li><%= item.quantity %> x <%= item.product.name %></li>
     <% end %>
   </ul>
+  <%= button_to 'Delete Order', order, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class => 'spacing' %>
 <% end %>

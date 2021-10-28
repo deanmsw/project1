@@ -75,3 +75,8 @@ h1 {
 .table2 {
   margin-bottom: 50px;
 }
+.feature {
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+}
